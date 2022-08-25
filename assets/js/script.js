@@ -16,7 +16,17 @@ document.addEventListener('DOMContentLoaded', 'function()');{
     }
 }
 
-function runGame()
+/* 
+* The main game loop
+* generates two random numbers between 1-25 for math problems
+*/
+function runGame(){
+    
+    let num1 = Math.floor(Math.random()*25 + 1);
+    let num2 = Math.floor(Math.random()*25 + 1);
+}
+
+runGame()
 function checkAnswer()
 function calculate()
 function incrementScore()
