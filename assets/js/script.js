@@ -34,20 +34,35 @@ function runGame(gameType){
     }
 };
 
-/** function checkAnswer(){
+ function checkAnswer(){
 
 }
 function calculate()
 function incrementScore()
 function incrementWrongAnswer()
-*/
+/**
+ * changes the operater to +, adds two operands for the game mechanism
+ * @param {num1} operand1 
+ * @param {num2} operand2 
+ */
 function displayAdditionQuestion(operand1, operand2){
     document.getElementById('operand1').textContent = 'operand1';
     document.getElementById('operand2').textContent = 'operand2';
     document.getElementById('operator').textContent = '+';
 };
-/**
-function displaySubtractionQuestion()
-function displayMultiplicationQuestion()
-function displayDivisionQuestion()
-*/
+
+function displaySubtractionQuestion(operand1,operand2){
+    document.getElementById('operand1').textContent = 'operand1';
+    document.getElementById('operand2').textContent = 'operand2';
+    document.getElementById('operator').textContent = '-';
+}
+function displayMultiplicationQuestion(operand1,operand2){
+    document.getElementById('operand1').textContent = 'operand1';
+    document.getElementById('operand2').textContent = 'operand2';
+    document.getElementById('operator').textContent = 'x';
+}
+function displayDivisionQuestion(operand1,operand2){
+    document.getElementById('operand1').textContent = 'operand1';
+    document.getElementById('operand2').textContent = 'operand2';
+    document.getElementById('operator').textContent = '/';
+}
