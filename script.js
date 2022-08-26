@@ -45,7 +45,7 @@ function checkAnswer(){
         alert('You got it right! :)')
         incrementScore();
     } else {
-        alert('`oh dear, you got it wrong :(. The correct answer was ${calculatedAnswer[0]}`')
+        alert(`oh dear, you got it wrong :(. The correct answer was ${calculatedAnswer[0]}`)
         incrementWrongAnswer();
     }
 
@@ -58,7 +58,7 @@ function calculateCorrectAnswer(){
         let operator = document.getElementById('operator').innerText;
     
         if( operator === '+'){
-            return [operand1, operand2, 'addition']
+            return [operand1 + operand2, 'addition']
         }
         else{
             alert(`unimplemented game ${operator}`)
