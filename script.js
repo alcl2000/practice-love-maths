@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
 * generates two random numbers between 1-25 for math problems
 */
 function runGame(gameType){
+
+    document.getElementById('answer-box').value = '';
+    document.getElementById('answer-box').focus();
     
     let num1 = Math.floor(Math.random()*25 + 1);
     let num2 = Math.floor(Math.random()*25 + 1);
@@ -40,6 +43,12 @@ function runGame(gameType){
         alert(`Uknown gametype ${gameType}`);
         throw `Unknown gametype ${gameType}. Aborting`;
     }
+
+    document.getElementById('answer-box').addEventListener('keydown',function(event){
+        if ( event.key === 'Enter'){
+            checkAnswer();
+        }
+    })
 };
 /**
  * gets the operands and operators from the DOM and calculates the answer
@@ -100,8 +109,8 @@ function displayAdditionQuestion(operand1, operand2){
     document.getElementById('operator').textContent = '+';
 };
 function displaySubtractionQuestion(operand1 , operand2){
-    document.getElementById('operand1').textContent = operand1;
-    document.getElementById('operand2').textContent = operand2;
+    document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;
+    document.getElementById('operand2').textContent = operand1 > operand2 ? operand2 : operand1;
     document.getElementById('operator').textContent = '-';
 };
 function displayMultiplicationQuestion(operand1 , operand2){
@@ -110,7 +119,7 @@ function displayMultiplicationQuestion(operand1 , operand2){
     document.getElementById('operator').textContent = 'x';
 };
 function displayDivisionQuestion(operand1,operand2){
-    document.getElementById('operand1').textContent = operand1;
-    document.getElementById('operand2').textContent = operand2;
+    document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;
+    document.getElementById('operand2').textContent = operand1 > operand2 ? operand2 : operand1;
     document.getElementById('operator').textContent = '/';
 };
